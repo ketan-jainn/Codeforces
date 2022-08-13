@@ -1,9 +1,19 @@
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.util.HashSet;
 import java.util.Scanner;
 
-public class code {
+public class Solution {
+
+    public static int distinct(String s) {
+        HashSet<Character> ans = new HashSet<Character>();
+        for (int i = 0; i < s.length(); i++) {
+            ans.add(s.charAt(i));
+
+        }
+        return ans.size();
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -17,9 +27,17 @@ public class code {
         }
 
         // Your Code Starts Here
-        int n;
-        n = sc.nextInt();
-        System.out.println(n);
+        // int count = sc.nextInt();
+        // while (count-- > 0) {
+
+        // }
+        String s = sc.next();
+        int result = distinct(s);
+        if (result % 2 == 0) {
+            System.out.println("CHAT WITH HER!");
+        } else {
+            System.out.println("IGNORE HIM!");
+        }
         sc.close();
     }
 }
